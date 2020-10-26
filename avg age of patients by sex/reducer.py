@@ -24,6 +24,6 @@ for line in sys.stdin:
 
 # Reducer
 
-for target in sex_age.keys():
-    avg_age = sum(sex_age[target])*1.0/len(sex_age[target])
-    print("{}\t{}".format(target,avg_age))
+for sex in sex_age.keys():
+    avg_age = sum(sex_age[sex])*1.0/len(sex_age[sex])
+    print("sex = {}\t avg age = {}".format(sex,avg_age))
