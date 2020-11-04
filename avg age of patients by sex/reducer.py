@@ -23,7 +23,7 @@ for line in sys.stdin:
             sex_age[sex].append(float(age))
 
 # Reducer
-
+print("male = 1 || female = 0")
 for sex in sex_age.keys():
     avg_age = sum(sex_age[sex])*1.0/len(sex_age[sex])
     print("sex = {}\t avg age = {}".format(sex,avg_age))
