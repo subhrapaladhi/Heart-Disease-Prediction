@@ -7,21 +7,21 @@ def check(s):
     except ValueError:
         return False
 
-avg_heartrate = {}
+target_heartrate = {}
 
 # Partitoner 
 for line in sys.stdin:
     line = line.strip()
     target,heartRate = line.split("\t")
 
-    if target in avg_heartrate:
-        avg_heartrate[target].append(float(heartRate))
+    if target in target_heartrate:
+        target_heartrate[target].append(float(heartRate))
     else:
         if check(target):
-            avg_heartrate[target] = []
-            avg_heartrate[target].append(float(heartRate))
+            target_heartrate[target] = []
+            target_heartrate[target].append(float(heartRate))
 
 # Reducer
-for target in avg_heartrate.keys():
-    avg_age = sum(avg_heartrate[target])*1.0/len(avg_heartrate[target])
-    print("target = {}\t avg maximum heart rate = {}".format(target,avg_age))
+for target in target_heartrate.keys():
+    avg_heartrate = sum(target_heartrate[target])*1.0/len(target_heartrate[target])
+    print("target = {}\t avg maximum heart rate = {}".format(target,avg_heartrate))
