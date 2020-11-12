@@ -8,5 +8,6 @@ for line in sys.stdin:
     age = line[0]
     sex = line[1]
     target = line[13]
-    if(target==1):
+    # print('target: ',target, ' sex: ',sex, ' age: ',age)
+    if(target=='1'):
         print("{}\t{}".format(sex,age))
